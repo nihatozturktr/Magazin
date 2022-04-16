@@ -1,0 +1,151 @@
+Cooking Magazine
+
+
+
+Doel: 
+Het doel van deze opdracht is om een applicatie te maken die kookmagazines creëert en die in een lijst toevoegt,afdrukt, update, verwijderd (ArrayList). 
+Voordat we beginnen met programmeren, gaan we eventjes stilstaan wat men allemaal nodig hebben om tot onze einddoel te komen. 
+Bij deze opdracht gaan jullie stapsgewijs zelf een UML tekenen maar ook je eigen vragen over het ontwerp schrijven. (op papier) 
+De opdracht is niet compleet en jij moet zelf op bepaalde plaatsen een aanvulling geven. Indien je in group werkt stel elkaar de vragen en discussieer hierover. 
+Instructies: 
+Neem je tijd om te lezen en de UML te tekenen. 
+Wacht met programmeren tot na dat je alles getekend hebt. 
+UML startpunt
+/
+//Hedef:
+//Bu ödevin amacı, yemek dergileri oluşturan ve bunları listeleyen, yazdıran, güncelleyen, silen (ArrayList) bir uygulama oluşturmaktır.
+//Programlamaya başlamadan önce, insanların nihai hedefimize ulaşmak için neye ihtiyacı olduğunu kısaca ele alacağız.
+//Bu ödevde kademeli olarak kendiniz bir UML çizeceksiniz, ancak tasarımla ilgili kendi sorularınızı da yazacaksınız. (kağıtta)
+//Ödev tamamlanmadı ve belirli yerlerde kendiniz tamamlamanız gerekiyor. Bir grupta çalışıyorsanız, birbirinize sorular sorun ve tartışın.
+
+
+//Talimatlar:
+//UML'yi okumak ve imzalamak için zaman ayırın.
+//Her şeyi çizene kadar programlama ile bekleyin.
+//UML başlangıç ​​noktası /
+
+
+In eerste instantie lijkt het eenvoudig om zo een applicatie te maken maar welke bouwstenen zijn er allemaal nodig om tot het eindresultaat te komen. Een lijst van magazines is op zich niet moeilijk te implementeren. Maar als we gaan inzoomen dan zien we dat er veel tussenstappen of onderdelen zijn. 
+Om een lijst van kookmagazine te kunnen creëren hebben we ten eerste een kookmagazine nodig. 
+Begin maar te tekenen en na te denken welke eigenschappen dat een kookmagazine heeft. 
+Klassen & Eigenschappen
+
+//Böyle bir uygulamayı yapmak ilk bakışta basit gibi görünse de sonuca ulaşmak için hangi yapı taşlarına ihtiyaç vardır.
+Kendi içinde bir dergi listesi uygulamak zor değildir. Ancak yakınlaştırırsak, birçok ara adım veya parça olduğunu görüyoruz.
+//Bir yemek dergisi listesi oluşturmak için önce bir yemek dergisine ihtiyacımız var.
+//Bir yemek dergisinin sahip olduğu nitelikleri çizmeye ve düşünmeye başlayın.
+//Sınıflar ve Nitelikler
+
+
+
+Bv elke kookmagazine heeft 
+1. Een naam  xxx
+2. Recepten
+- aangezien we niet maar 1 recept nodig hebben spreken we dan over een lijst van recepten 
+We hebben nu een beeld van wat de eigenschappen zijn van een kookmagazine. Bij de 2de eigenschap recepten gaan we even moeten nadenken welke type dat het is. So let’s dive a little deeper…
+
+//Örneğin, her yemek dergisinde
+//1. Bir isim
+//2. Tarifler
+//- Sadece 1 tarife ihtiyacımız olmadığı için bir tarif listesinden bahsediyoruz
+//Artık bir yemek dergisinin özellikleri hakkında bir fikrimiz var. Tariflerin 2. özelliğinde hangi tür olduğunu düşünmemiz gerekecek. O zaman biraz daha derine inelim...
+
+2.1 Recipe
+Net zoals we gezien hebben als je een lijst van kookmagazines wil maken, moet je eerst een object van het type kookmagazine hebben dus concreet bedoelen we hiermee… 
+Een vraag dat we onszelf moeten afvragen is wat houd een recept in, welke zijn de eigenschappen van een recept? 
+Een recept heeft: 
+● Een naam 
+● Auteur 
+● Ingrediënten 
+- Een lijst van ingrediënten 
+● Procedure 
+- Beschrijving/instructies van het recept 
+Dan kijken we nog verder, wat heeft een auteur? 
+2.1.1 Author 
+● Naam 
+● Familienaam 
+Hier stellen we eerder ons de vraag welke type is een ingrediënt (String, enum)? 2.1.2 Ingrediënten 
+● Naam 
+Ondertussen merken we dat Recipe een entiteit op zich is, en dat 2 van zijn eigenschappen ook entiteiten kunnen zijn. 
+Nu dat we rond zijn met de eigenschappen te bekijken van elk individuele entiteit, gaan we verder met het bekijken van de functionaliteiten dat onze objecten nodig hebben.
+Functionaliteiten
+
+
+//2.1 Tarif
+//Gördüğümüz gibi, yemek dergilerinin bir listesini yapmak istiyorsanız, öncelikle yemek dergisi türünde bir nesneye sahip olmanız gerekir, yani somut olarak demek istediğimiz…
+//Kendimize sormamız gereken bir soru, bir tarif neleri içerir, bir tarifin özellikleri nelerdir?
+//Bir tarifi vardır:
+//● Bir ad
+//● Yazar
+//● Malzemeler
+//- Malzemelerin bir listesi
+//● Prosedür
+//- Tarif açıklaması/talimatları
+//O zaman daha da ileriye bakarız, bir yazarın elinde ne var?
+//2.1.1 Yazar
+//● Ad
+//● Soyadı
+//Burada kendimize hangi türün bir bileşen olduğunu sormayı tercih ediyoruz (String, enum)? 2.1.2 Malzemeler
+//● Ad
+//Bu arada, Reçete'nin kendi içinde bir varlık olduğunu ve 2 özelliğinin de varlık olabileceğini fark ederiz.
+//Artık her bir varlığın özelliklerine bakmayı bitirdiğimize göre, nesnelerimizin gerektirdiği işlevselliklere bakmaya geçelim.
+
+Functionaliteiten
+Voor elke object gaat je bepaalde gedragingen nodig hebben, 
+Bv. we willen een lijst van magazines, dus er kunnen de volgende bewerkingen gebeuren : 
+● Een magazine aan de lijst toevoegen 
+● Een magazine van de lijst verwijderen 
+● Een magazine van de lijst ophalen 
+● Een magazine updaten 
+● Magazines sorteren op basis van naam of category 
+Maar voordat we een magazine aan een lijst toevoegen moeten we een lijst van recepten hebben, dus de stappen die hierboven beschreven staan zijn ook van toepassing voor de recepten. 
+● Een recept aan de lijst toevoegen 
+● Een recept van de lijst verwijderen 
+● …. 
+De recept op zijn beurt heeft ook een lijst van ingrediënten nodig… 
+Stippel uit waar deze functionaliteiten behoren, bv. Kan je een interface gebruiken voor de gedragingen te definiëren of doe je dat rechtstreeks in de klasse zelf ,
+ of maak je nog een andere klasse waar enkel logica in zit …?
+
+//işlevsellikler
+//Her nesne için belirli davranışlara ihtiyacınız olacak,
+//Örneğin. dergilerin bir listesini istiyoruz, böylece aşağıdaki işlemler yapılabilir:
+//● Listeye bir dergi ekleyin
+//● Listeden bir dergiyi çıkarın
+//● Listeden bir dergi alın
+//● Bir dergiyi güncelleme
+//● Dergileri ada veya kategoriye göre sıralayın
+//Ancak bir listeye dergi eklemeden önce bir yemek tarifleri listesine ihtiyacımız var, bu nedenle yukarıda açıklanan adımlar tarifler için de geçerlidir.
+//● Listeye bir tarif ekleyin
+//● Listeden bir tarifi kaldırın
+//….
+//Tarifin de bir malzeme listesine ihtiyacı var…
+//Bu işlevlerin nereye ait olduğunu belirleyin, ör. Davranışları tanımlamak için bir arayüz kullanabilir misiniz yoksa bunu doğrudan sınıfın kendisinde mi yaparsınız,
+//  yoksa içinde sadece mantık olan başka bir sınıf mı yaratıyorsunuz…?
+
+
+
+Constructie
+Dus als we goed kijken hebben we een magazine in kleine stukjes ontleed. Nu is het jou taak om zelf te bepalen welke constructors je nodig hebt om je objecten te maken. 
+Denk aan hoe dat we alles in stappen verdeeld hebben en wat wil je juist doorgeven. 
+Bekijk de afhankelijkheden tussen de objecten en probeer het onderstaande voorbeeld aan te vullen 
+- CookingMagazine(....) 
+- Recipe(....) 
+- ListOfIngredients 
+- Author(...) 
+Implementatie
+
+//İnşaat
+//Yani yakından bakarsak, bir dergiyi küçük parçalara ayırdık. Artık, nesnelerinizi oluşturmak için hangi kuruculara ihtiyacınız olduğunu belirlemek sizin işiniz.
+//Her şeyi nasıl adımlara böldüğümüzü ve tam olarak neyi aktarmak istediğinizi düşünün.
+//Nesneler arasındaki bağımlılıklara bakın ve aşağıdaki örneği tamamlamaya çalışın
+//- Yemek Dergisi(....)
+//- Yemek tarifi(....)
+//- Malzeme Listesi
+//- Yazar(...)
+//uygulama
+
+
+
+Nu dat je je UML getekend hebt kan je aan de slag met programmeren! Kijk naar het doel van de applicatie om de juiste implementaties te voorzien.
+//Artık UML'nizi çizdiğinize göre programlamaya başlayabilirsiniz! Doğru uygulamaları sağlamak için uygulamanın amacına bakın.
+
